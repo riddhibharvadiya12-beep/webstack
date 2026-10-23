@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Haven - Creative Spaces</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #fdfdfd;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #1c1c1c;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6f61;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 180px 50px; /* Increased height */
+            background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: white;
+        }
+
+        .hero-text {
+            max-width: 700px;
+            background: rgba(0,0,0,0.5);
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .hero-text h2 {
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            margin-bottom: 35px;
+        }
+
+        .hero-text button {
+            padding: 18px 45px;
+            font-size: 18px;
+            background: #ff6f61;
+            border: none;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero-text button:hover {
+            background: #ff856f;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 50px;
+            background: #f8f8f8;
+            text-align: center;
+        }
+
+        .services h3 {
+            font-size: 40px;
+            color: #ff6f61;
+            margin-bottom: 60px;
+        }
+
+        .service-grid {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 380px; /* Increased width */
+            padding: 30px 20px;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 280px; /* Increased height */
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h4 {
+            margin-bottom: 12px;
+            color: #ff6f61;
+            font-size: 22px;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Featured Projects */
+        .projects {
+            padding: 100px 50px;
+        }
+
+        .projects h3 {
+            font-size: 40px;
+            text-align: center;
+            color: #ff6f61;
+            margin-bottom: 60px;
+        }
+
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .project-card {
+            position: relative;
+            width: 380px; /* Increased width */
+            overflow: hidden;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 280px; /* Increased height */
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-card .overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* Interior Tips */
+        .tips {
+            padding: 100px 50px;
+            background: #f8f8f8;
+        }
+
+        .tips h3 {
+            font-size: 40px;
+            text-align: center;
+            color: #ff6f61;
+            margin-bottom: 60px;
+        }
+
+        .tip-item {
+            max-width: 850px;
+            margin: 0 auto 35px auto;
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .tip-item h4 {
+            margin-bottom: 18px;
+            color: #ff6f61;
+            font-size: 22px;
+        }
+
+        .tip-item p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 50px;
+            background: #fdfdfd;
+            text-align: center;
+        }
+
+        .contact h3 {
+            font-size: 40px;
+            color: #cc3e31;
+            margin-bottom: 18px;
+        }
+
+        .contact-desc {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 50px;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .contact form input,
+        .contact form textarea {
+            width: 100%;
+            padding: 18px 25px;
+            border: 2px solid #ff6f61;
+            border-radius: 50px;
+            outline: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .contact form input:focus,
+        .contact form textarea:focus {
+            border-color: #ff856f;
+            box-shadow: 0 0 10px rgba(255,111,97,0.3);
+        }
+
+        .contact form button {
+            padding: 18px 45px;
+            font-size: 18px;
+            background: #ff6f61;
+            border: none;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact form button:hover {
+            background: #ff856f;
+        }
+
+        /* Footer */
+        footer {
+            background: #1c1c1c;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        footer a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media(max-width: 992px){
+            .service-card, .project-card {
+                width: 320px;
+            }
+
+            .hero-text h2 {
+                font-size: 45px;
+            }
+        }
+
+        @media(max-width: 768px){
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 150px 30px;
+            }
+
+            .hero-text {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .service-grid, .project-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Interior Haven</h1>
+        <nav>
+             <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Our Best Design</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h2>Design Your Dream Space</h2>
+            <p>We transform ordinary spaces into extraordinary interiors with creativity, elegance, and functionality.</p>
+            <button>Get Started</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h3>Our Services</h3>
+        <div class="service-grid">
+            <div class="service-card">
+                <img src="assets/img1.jpg" alt="Service 1">
+                <h4>Residential Design</h4>
+                <p>Create personalized and functional home interiors that reflect your style.</p>
+            </div>
+            <div class="service-card">
+                <img src="assets/img2.webp" alt="Service 2">
+                <h4>Commercial Design</h4>
+                <p>Design inspiring workspaces that boost creativity and productivity.</p>
+            </div>
+            <div class="service-card">
+                <img src="assets/img3.avif" alt="Service 3">
+                <h4>Decor Consultation</h4>
+                <p>Expert advice to enhance your interiors with stylish furniture and decor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="projects" id="projects">
+        <h3>Our Best Design</h3>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="assets/img4.jpg" alt="Project 1">
+                <div class="overlay">Modern Living Room</div>
+            </div>
+            <div class="project-card">
+                <img src="assets/img5.jpg" alt="Project 2">
+                <div class="overlay">Cozy Bedroom</div>
+            </div>
+            <div class="project-card">
+                <img src="assets/img6.jpg" alt="Project 3">
+                <div class="overlay">Minimalist Kitchen</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact" style="background: linear-gradient(135deg, #ff6f61, #ff856f); color: white; padding: 100px 50px;">
+        <h3 style="text-align:center; font-size:42px; margin-bottom:60px;">Get in Touch</h3>
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:50px; max-width:1200px; margin:0 auto;">
+
+            <!-- Contact Info -->
+            <div style="flex:1; min-width:300px;">
+                <h4 style="font-size:28px; margin-bottom:30px;">Contact Information</h4>
+                <p style="margin-bottom:20px;"><strong>Phone:</strong> +91 123-456-7890</p>
+                <p style="margin-bottom:20px;"><strong>Email:</strong> info@interiorhaven.com</p>
+                <p style="margin-bottom:20px;"><strong>Address:</strong> 123 Creative Street, City, Country</p>
+                <div style="margin-top:30px;">
+                    <p style="margin-bottom:10px;">Follow Us:</p>
+                    <div style="display:flex; gap:15px;">
+                        <a href="#" style="color:white; font-size:20px; text-decoration:none;">🔵</a>
+                        <a href="#" style="color:white; font-size:20px; text-decoration:none;">🐦</a>
+                        <a href="#" style="color:white; font-size:20px; text-decoration:none;">📸</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div style="flex:1; min-width:300px;">
+                <form style="display:flex; flex-direction:column; gap:20px; background:rgba(255,255,255,0.1); padding:30px; border-radius:20px; backdrop-filter:blur(10px);">
+                    <input type="text" placeholder="Your Name" required style="padding:15px 20px; border:none; border-radius:50px; font-size:16px; outline:none;">
+                    <input type="email" placeholder="Your Email" required style="padding:15px 20px; border:none; border-radius:50px; font-size:16px; outline:none;">
+                    <textarea placeholder="Your Message" rows="5" required style="padding:15px 20px; border:none; border-radius:20px; font-size:16px; outline:none;"></textarea>
+                    <button type="submit" style="padding:15px 40px; border:none; border-radius:50px; background:white; color:#ff6f61; font-size:16px; font-weight:600; cursor:pointer; transition:0.3s;">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer>
+        <p>© 2026 Interior Haven. Designed with ❤️ by You. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>

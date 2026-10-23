@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UrbanGreens – Sustainable Living</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#91dfa4;
+    color:#1b1b1b;
+}
+
+/* HEADER */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(233,245,236,0.9);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+header h1{
+    font-family:'Playfair Display',serif;
+    font-size:26px;
+    color:#3a5a40;
+}
+
+nav a{
+    margin-left:30px;
+    text-decoration:none;
+    color:#1b1b1b;
+    font-weight:500;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    padding:120px 60px;
+    gap:60px;
+}
+
+.hero h2{
+    font-family:'Playfair Display',serif;
+    font-size:64px;
+    line-height:1.1;
+    color:#3a5a40;
+}
+
+.hero p{
+    font-size:20px;
+    margin:30px 0;
+    max-width:500px;
+}
+
+.hero img{
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    border-radius:40px;
+}
+
+/* STORY SECTION */
+.story{
+    padding:140px 60px;
+    background:#3a5a40;
+    color:white;
+}
+
+.story-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+}
+
+.story h3{
+    font-family:'Playfair Display',serif;
+    font-size:48px;
+    margin-bottom:30px;
+}
+
+.story p{
+    font-size:18px;
+    line-height:1.8;
+}
+
+.story img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    border-radius:30px;
+}
+
+/* FEATURES */
+.features{
+    padding:140px 60px;
+}
+
+.features h3{
+    font-size:46px;
+    font-family:'Playfair Display',serif;
+    color:#3a5a40;
+    margin-bottom:80px;
+}
+
+.feature{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:40px;
+    margin-bottom:60px;
+}
+
+.feature span{
+    font-size:64px;
+    font-weight:700;
+    color:#b08968;
+}
+
+.feature h4{
+    font-size:26px;
+    margin-bottom:10px;
+}
+
+.feature p{
+    line-height:1.7;
+}
+
+/* GALLERY */
+.gallery{
+    padding:140px 0;
+    background:#1b1b1b;
+}
+
+.gallery-track{
+    display:flex;
+    gap:30px;
+    overflow-x:auto;
+    padding:0 60px;
+}
+
+.gallery-track img{
+    min-width:380px;
+    height:420px;
+    object-fit:cover;
+    border-radius:30px;
+}
+
+/* CONTACT */
+.contact{
+    padding:140px 60px;
+    background:#b08968;
+    color:white;
+}
+
+.contact-box{
+    max-width:900px;
+    margin:auto;
+    background:rgba(255,255,255,0.15);
+    padding:60px;
+    border-radius:40px;
+}
+
+.contact h3{
+    font-family:'Playfair Display',serif;
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.contact p{
+    margin-bottom:40px;
+    font-size:18px;
+}
+
+.contact input,
+.contact textarea{
+    width:100%;
+    padding:16px 20px;
+    margin-bottom:20px;
+    border:none;
+    border-radius:30px;
+    outline:none;
+    font-size:16px;
+}
+
+.contact button{
+    padding:16px 50px;
+    border:none;
+    border-radius:40px;
+    background:#1b1b1b;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px;
+    background:#1b1b1b;
+    color:white;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .hero,
+    .story-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h2{
+        font-size:48px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>UrbanGreens</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Story</a>
+        <a href="#">Living</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h2>Where Nature Meets Modern Living</h2>
+        <p>
+            UrbanGreens explores sustainable lifestyles, green architecture,
+            and calm living spaces inside busy cities.
+        </p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
+</section>
+
+<section class="story">
+    <div class="story-grid">
+        <div>
+            <h3>Our Philosophy</h3>
+            <p>
+                We believe modern life doesn’t have to disconnect us from nature.
+                Every space, balcony, and rooftop can become a green sanctuary.
+            </p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6">
+    </div>
+</section>
+
+<section class="features">
+    <h3>Ways to Live Green</h3>
+
+    <div class="feature">
+        <span>01</span>
+        <div>
+            <h4>Urban Gardening</h4>
+            <p>Grow plants in compact spaces using smart layouts and containers.</p>
+        </div>
+    </div>
+
+    <div class="feature">
+        <span>02</span>
+        <div>
+            <h4>Eco Materials</h4>
+            <p>Use recycled wood, clay, and natural textures for interiors.</p>
+        </div>
+    </div>
+
+    <div class="feature">
+        <span>03</span>
+        <div>
+            <h4>Natural Light</h4>
+            <p>Design layouts that maximize sunlight and airflow.</p>
+        </div>
+    </div>
+</section>
+
+<section class="gallery">
+    <div class="gallery-track">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e">
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+    </div>
+</section>
+
+<section class="contact">
+    <div class="contact-box">
+        <h3>Join the Green Movement</h3>
+        <p>
+            Want tips, guides, and inspiration for sustainable living?
+            Drop us a message.
+        </p>
+
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button>Send Message</button>
+    </div>
+</section>
+
+<footer>
+    © 2026 UrbanGreens — Sustainable Living
+</footer>
+
+</body>
+</html>

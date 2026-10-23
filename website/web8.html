@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Atlas — Creative Collective</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#f5f3ef;
+  color:#1f2933;
+}
+
+/* ===== GRID LAYOUT ===== */
+.wrapper{
+  display:grid;
+  grid-template-columns:90px 1fr;
+}
+
+/* ===== SIDE BAR ===== */
+.sidebar{
+  background:#111827;
+  color:#fff;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  padding:30px 0;
+}
+
+.sidebar h1{
+  font-family:'DM Serif Display',serif;
+  transform:rotate(-90deg);
+  letter-spacing:4px;
+}
+
+.sidebar span{
+  font-size:12px;
+  opacity:.6;
+}
+
+/* ===== MAIN ===== */
+main{padding:80px}
+
+/* ===== HERO ===== */
+.hero{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:60px;
+  align-items:center;
+}
+
+.hero h2{
+  font-family:'DM Serif Display',serif;
+  font-size:64px;
+  line-height:1.1;
+}
+
+.hero p{
+  margin:30px 0;
+  font-size:18px;
+  color:#4b5563;
+}
+
+.hero a{
+  display:inline-block;
+  padding:14px 36px;
+  border:1px solid #111827;
+  color:#111827;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.hero img{
+  width:100%;
+  border-radius:12px;
+}
+
+/* ===== FEATURE STRIP ===== */
+.strip{
+  margin:120px 0;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
+
+.strip div{
+  padding-top:20px;
+  border-top:2px solid #111827;
+}
+
+.strip h3{
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+.strip p{color:#6b7280}
+
+/* ===== SHOWCASE ===== */
+.showcase{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.showcase img{
+  width:100%;
+  border-radius:12px;
+}
+
+.showcase-text{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.showcase-text h2{
+  font-family:'DM Serif Display',serif;
+  font-size:46px;
+}
+
+.showcase-text p{
+  margin:20px 0;
+  color:#4b5563;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  margin-top:140px;
+  padding-top:40px;
+  border-top:1px solid #d1d5db;
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1000px){
+  .wrapper{grid-template-columns:1fr}
+  .sidebar{display:none}
+  main{padding:40px}
+  .hero{grid-template-columns:1fr}
+  .strip{grid-template-columns:1fr}
+  .showcase{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h1>ATLAS</h1>
+    <span>© 2026</span>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h2>Design is a<br>Point of View</h2>
+        <p>Atlas is a creative collective crafting editorial-style websites, strong visual narratives, and timeless digital products.</p>
+        <a href="#">View Our Work</a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200" alt="Creative">
+    </section>
+
+    <!-- FEATURE STRIP -->
+    <section class="strip">
+      <div>
+        <h3>Editorial Design</h3>
+        <p>Magazine-inspired layouts with strong typography.</p>
+      </div>
+      <div>
+        <h3>Brand Systems</h3>
+        <p>Visual identities built for long-term growth.</p>
+      </div>
+      <div>
+        <h3>Creative Code</h3>
+        <p>Clean, modern development focused on performance.</p>
+      </div>
+    </section>
+
+    <!-- SHOWCASE -->
+    <section class="showcase">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200">
+      <div class="showcase-text">
+        <h2>Less Noise.<br>More Meaning.</h2>
+        <p>We believe clarity and restraint create more powerful experiences than excess animations and clutter.</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>hello@atlasstudio.com</p>
+      <p>Instagram · Behance · Dribbble</p>
+    </footer>
+
+  </main>
+</div>
+
+</body>
+</html>

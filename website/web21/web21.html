@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LittleStars – Kids Wear</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#6ecbff;
+  --pink:#ff8ec7;
+  --yellow:#ffd93d;
+  --mint:#7ef0c3;
+  --dark:#333;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#fffaf5;
+  color:var(--dark);
+}
+
+/* ================= NAVBAR ================= */
+header{
+  position:sticky;
+  top:0;
+  background:white;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+  z-index:100;
+}
+
+nav{
+  max-width:1200px;
+  margin:auto;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-family:'Baloo 2',cursive;
+  font-size:28px;
+  color:var(--pink);
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:25px;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--dark);
+  font-weight:500;
+}
+
+/* ================= HERO ================= */
+.hero{
+  position:relative;
+  background:linear-gradient(135deg,#ff8ec7,#6ecbff,#7ef0c3);
+  padding:110px 20px 160px;
+  overflow:hidden;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:120px;
+  background:white;
+  border-radius:100% 100% 0 0;
+}
+
+.hero-content{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:.9fr 1.1fr; /* IMAGE LEFT | CONTENT RIGHT */
+  gap:50px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+
+.badge{
+  display:inline-block;
+  background:white;
+  padding:8px 18px;
+  border-radius:20px;
+  font-weight:600;
+  color:#ff5fa2;
+  margin-bottom:15px;
+}
+
+.hero h1{
+  font-family:'Baloo 2',cursive;
+  font-size:60px;
+  color:white;
+  line-height:1.1;
+}
+
+.hero h1 span{
+  color:#fff3a0;
+}
+
+.hero p{
+  color:white;
+  font-size:18px;
+  margin:25px 0;
+  max-width:480px;
+}
+
+.btn{
+  background:white;
+  color:#ff5fa2;
+  padding:14px 32px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  box-shadow:0 15px 30px rgba(0,0,0,.25);
+}
+
+.hero-img{
+  background:white;
+  padding:20px;
+  border-radius:40px;
+  box-shadow:0 40px 80px rgba(0,0,0,.3);
+  transform:rotate(-3deg);
+}
+
+.hero-img img{
+  width:100%;
+  border-radius:30px;
+}
+
+/* Floating bubbles */
+.bubble{
+  position:absolute;
+  border-radius:50%;
+  opacity:.3;
+}
+
+.b1{width:120px;height:120px;background:white;top:40px;left:5%;}
+.b2{width:80px;height:80px;background:#fff3a0;top:120px;right:10%;}
+.b3{width:150px;height:150px;background:white;bottom:180px;left:20%;}
+
+/* ================= SECTIONS ================= */
+section{
+  padding:80px 20px;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.title h2{
+  font-family:'Baloo 2',cursive;
+  font-size:40px;
+}
+
+/* ================= CATEGORIES ================= */
+.categories{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.cat{
+  height:220px;
+  border-radius:30px;
+  overflow:hidden;
+  position:relative;
+}
+
+.cat img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.cat::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.35);
+}
+
+.cat span{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-family:'Baloo 2',cursive;
+  font-size:22px;
+  font-weight:700;
+  z-index:2;
+}
+
+/* ================= ABOUT ================= */
+.about{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  background:linear-gradient(135deg,#fff,var(--mint));
+  padding:60px;
+  border-radius:30px;
+  font-size:18px;
+}
+
+/* ================= CONTACT ================= */
+.contact{
+  max-width:700px;
+  margin:auto;
+  background:white;
+  padding:50px;
+  border-radius:30px;
+  box-shadow:0 30px 60px rgba(0,0,0,.15);
+}
+
+.contact input,
+.contact textarea{
+  width:100%;
+  padding:15px;
+  margin-bottom:15px;
+  border-radius:15px;
+  border:1px solid #ddd;
+}
+
+.contact button{
+  width:100%;
+  padding:15px;
+  border:none;
+  background:var(--pink);
+  color:white;
+  font-weight:600;
+  border-radius:30px;
+  cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;
+  padding:30px;
+  background:var(--blue);
+  color:white;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  nav ul{
+    display:none;
+  }
+  .hero-content{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero p{
+    margin:auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">LittleStars</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+  <div class="bubble b1"></div>
+  <div class="bubble b2"></div>
+  <div class="bubble b3"></div>
+
+  <div class="hero-content">
+
+    <!-- IMAGE LEFT -->
+    <div class="hero-img">
+      <img src="assets/hero.webp" alt="Kids Fashion">
+    </div>
+
+    <!-- CONTENT RIGHT -->
+    <div>
+      <div class="badge">🌟 New Kids Collection 2026</div>
+      <h1>Happy Looks<br><span>For Little Stars</span></h1>
+      <p>
+        Soft fabrics, joyful colors & cute styles designed
+        to keep your kids comfy and smiling all day.
+      </p>
+      <a href="#categories" class="btn">Explore Collection</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories">
+  <div class="title"><h2>Shop by Category</h2></div>
+
+  <div class="categories">
+    <div class="cat">
+      <img src="assets/baby imag1.jpeg">
+      <span>👶 Baby Wear</span>
+    </div>
+    <div class="cat">
+      <img src="assets/boy img1.jpg">
+      <span>🧒 Boys Wear</span>
+    </div>
+    <div class="cat">
+      <img src="assets/girl img1.jpg">
+      <span>👧 Girls Wear</span>
+    </div>
+    <div class="cat">
+      <img src="assets/part img1.avif">
+      <span>🎉 Party Wear</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="title"><h2>About Us</h2></div>
+  <div class="about">
+    LittleStars creates comfortable, stylish and safe clothing
+    designed especially for kids.  
+    Every outfit is crafted with love, softness and playful colors.
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="title"><h2>Contact Us</h2></div>
+  <div class="contact">
+    <form onsubmit="sendMsg(event)">
+      <input type="text" placeholder="Parent Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2026 LittleStars Kids Wear 💖
+</footer>
+
+<script>
+function sendMsg(e){
+  e.preventDefault();
+  alert("Thanks! We will contact you soon 😊");
+}
+</script>
+
+</body>
+</html>

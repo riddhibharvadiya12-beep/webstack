@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fashionfy – Wear the Trend</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Poppins,sans-serif;
+  background:#f4f6fb;
+  color:#222;
+}
+
+img{
+  display:block;
+  background:#ddd;
+}
+
+/* ===== HEADER ===== */
+header{
+  background:white;
+  padding:20px 50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+header h1{
+  color:#6c63ff;
+}
+nav a{
+  margin-left:25px;
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+}
+
+/* ===== HERO ===== */
+.hero{
+  background:linear-gradient(120deg,#6c63ff,#8f88ff);
+  color:white;
+  padding:100px 60px;
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:40px;
+}
+.hero-text h2{
+  font-size:52px;
+}
+.hero-text p{
+  margin:25px 0;
+  max-width:500px;
+}
+.hero-text button{
+  padding:14px 35px;
+  border:none;
+  border-radius:30px;
+  background:white;
+  color:#6c63ff;
+  font-weight:600;
+  cursor:pointer;
+}
+.hero img{
+  width:100%;
+  border-radius:30px;
+}
+
+/* ===== SECTION ===== */
+section{
+  padding:90px 60px;
+}
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+.section-title h2{
+  font-size:36px;
+}
+.section-title p{
+  color:#666;
+}
+
+/* ===== CATEGORIES ===== */
+.categories{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+}
+.category{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,.1);
+  transition:.3s;
+}
+.category:hover{transform:translateY(-10px)}
+.category img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+.category h3{
+  padding:20px;
+  text-align:center;
+}
+
+/* ===== PRODUCTS ===== */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:35px;
+}
+.product{
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,.12);
+  transition:.3s;
+}
+.product:hover{transform:scale(1.05)}
+.product img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+}
+.product .info{
+  padding:25px;
+}
+.product span{
+  font-weight:600;
+  color:#6c63ff;
+}
+.product button{
+  margin-top:10px;
+  padding:10px 25px;
+  border:none;
+  border-radius:25px;
+  background:#6c63ff;
+  color:white;
+  cursor:pointer;
+}
+
+/* ===== BANNER ===== */
+.banner{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:80px 40px;
+}
+.banner h2{
+  font-size:42px;
+}
+.banner p{
+  margin-top:15px;
+  color:#ccc;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#0f0f1a;
+  color:#aaa;
+  text-align:center;
+  padding:30px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;text-align:center}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Fashionfy</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#products">Shop</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h2>Upgrade Your Style</h2>
+    <p>
+      Discover fashion that matches your personality.
+      Trendy designs, premium fabrics, and affordable prices.
+    </p>
+    <button>Shop Now</button>
+  </div>
+  <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=900&q=80">
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories">
+  <div class="section-title">
+    <h2>Shop by Category</h2>
+    <p>Explore the latest collections</p>
+  </div>
+
+  <div class="categories">
+    <div class="category">
+      <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=80">
+      <h3>Men</h3>
+    </div>
+    <div class="category">
+      <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=800&q=80">
+      <h3>Women</h3>
+    </div>
+    <div class="category">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80">
+      <h3>Kids</h3>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-title">
+    <h2>Trending Products</h2>
+    <p>Most loved by our customers</p>
+  </div>
+
+  <div class="products">
+    
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80">
+      <div class="info">
+        <h3>Summer Dress</h3>
+        <p>Lightweight and elegant everyday wear.</p>
+        <span>₹3,499</span><br>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=800&q=80">
+      <div class="info">
+        <h3>Casual Hoodie</h3>
+        <p>Comfortable streetwear style.</p>
+        <span>₹2,199</span><br>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER -->
+<section class="banner">
+  <h2>Season Sale is Live</h2>
+  <p>Up to 50% OFF on selected items</p>
+</section>
+
+<footer id="contact">
+  © 2026 Fashionfy • Designed for Trendsetters
+</footer>
+
+</body>
+</html>

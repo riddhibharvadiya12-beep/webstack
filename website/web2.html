@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creative Website</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #439eb9;
+      --card: #254d66;
+      --accent: #6c63ff;
+      --text: #ffffff;
+      --muted: #a1a1b5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #141a33, var(--bg));
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ===== NAVBAR ===== */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(11, 15, 26, 0.7);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    nav a {
+      margin-left: 25px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 60px;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      line-height: 1.2;
+    }
+
+    .hero h2 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .hero button {
+      margin-top: 35px;
+      padding: 14px 36px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--accent), #8f88ff);
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .hero button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(108, 99, 255, 0.4);
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 100px 60px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h3 {
+      font-size: 32px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    /* ===== CARDS ===== */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--card), #0e1325);
+      padding: 30px;
+      border-radius: 20px;
+      transition: transform 0.4s, box-shadow 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(108, 99, 255, 0.3), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .card h4 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      max-width: 600px;
+      margin: auto;
+      background: linear-gradient(180deg, var(--card), #0e1325);
+      padding: 40px;
+      border-radius: 20px;
+    }
+
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      border: none;
+      outline: none;
+      background: #0b1024;
+      color: white;
+      font-family: inherit;
+    }
+
+    .contact button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--accent), #8f88ff);
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 20px;
+      }
+
+      section {
+        padding: 80px 25px;
+      }
+
+      .hero h2 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <h1>CreativeX</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content reveal">
+      <h2>Build <span>Creative</span> Websites<br>With Pure Code</h2>
+      <p>Modern animations, clean UI, and smooth interactions using only HTML, CSS, and JavaScript.</p>
+      <button onclick="scrollToSection('features')">Explore Features</button>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="section-title reveal">
+      <h3>Features</h3>
+      <p>Designed to look premium and feel smooth</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <h4>✨ Smooth Animations</h4>
+        <p>Scroll-based animations without any external library.</p>
+      </div>
+      <div class="card reveal">
+        <h4>🎨 Creative UI</h4>
+        <p>Modern gradients, glassmorphism, and hover effects.</p>
+      </div>
+      <div class="card reveal">
+        <h4>⚡ Fast Performance</h4>
+        <p>Pure HTML, CSS, and JavaScript – no frameworks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-title reveal">
+      <h3>About This Website</h3>
+      <p>Minimal, creative, and easy to customize</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <h4>💡 Purpose</h4>
+        <p>This template is perfect for portfolios, startups, or creative ideas.</p>
+      </div>
+      <div class="card reveal">
+        <h4>🧠 Logic</h4>
+        <p>JavaScript is used only for interactions and animations.</p>
+      </div>
+      <div class="card reveal">
+        <h4>🚀 Customizable</h4>
+        <p>Change colors, text, and sections easily.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-title reveal">
+      <h3>Contact</h3>
+      <p>Let’s build something amazing</p>
+    </div>
+    <div class="contact reveal">
+      <input type="text" placeholder="Your Name" />
+      <input type="email" placeholder="Your Email" />
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button onclick="submitForm()">Send Message</button>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 CreativeX • Built with HTML, CSS & JS
+  </footer>
+
+  <script>
+    /* Smooth scroll */
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* Scroll reveal animation */
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      reveals.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          el.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    /* Fake form submit */
+    function submitForm() {
+      alert('Message sent successfully!');
+    }
+  </script>
+
+</body>
+</html>

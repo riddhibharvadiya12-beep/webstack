@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurora Jewels</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --gold:#c9a063;
+  --dark:#1b1b1b;
+  --light:#f8f4ef;
+  --beige:#e6dccf;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--light);
+  color:var(--dark);
+}
+
+/* NAVBAR */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+  background:rgba(248,244,239,0.95);
+  backdrop-filter:blur(10px);
+}
+
+nav{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  letter-spacing:1px;
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:30px;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--dark);
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  background:
+    linear-gradient(to right, rgba(0,0,0,.5), rgba(0,0,0,.1)),
+    url('https://images.unsplash.com/photo-1617038260897-41a1f14a8ca5') center/cover;
+  display:flex;
+  align-items:center;
+}
+
+.hero-content{
+  margin-left:10%;
+  max-width:500px;
+  color:white;
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:60px;
+  line-height:1.1;
+}
+
+.hero span{
+  color:var(--gold);
+}
+
+.hero p{
+  margin:20px 0;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 34px;
+  border:1px solid var(--gold);
+  color:white;
+  text-decoration:none;
+}
+
+.btn:hover{
+  background:var(--gold);
+  color:black;
+}
+
+/* SECTIONS */
+section{
+  padding:100px 20px;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.title h2{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+}
+
+.title span{
+  color:var(--gold);
+}
+
+/* COLLECTIONS */
+.collections{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+}
+
+.card div{
+  padding:20px;
+}
+
+.card h3{
+  font-family:'Playfair Display',serif;
+}
+
+/* WHY CHOOSE */
+.why{
+  background:var(--beige);
+}
+
+.why-box{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.why-item{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+}
+
+.why-item h3{
+  font-family:'Playfair Display',serif;
+  margin-bottom:10px;
+}
+
+/* ABOUT */
+.about{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  background:var(--beige);
+  padding:60px;
+  border-radius:30px;
+}
+
+/* CONTACT (NEW DESIGN) */
+.lux-contact{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:linear-gradient(135deg,#fff,#f4efe8);
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:0 30px 60px rgba(0,0,0,.15);
+}
+
+.contact-info{
+  padding:50px;
+  background:var(--dark);
+  color:white;
+}
+
+.contact-info h3{
+  font-family:'Playfair Display',serif;
+  color:var(--gold);
+  margin-bottom:20px;
+}
+
+.contact-info ul{
+  list-style:none;
+  margin-top:30px;
+}
+
+.contact-info li{
+  margin-bottom:15px;
+}
+
+.contact-form{
+  padding:50px;
+}
+
+.contact-form h3{
+  font-family:'Playfair Display',serif;
+  margin-bottom:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:15px;
+  margin-bottom:15px;
+  border:1px solid #ddd;
+  outline:none;
+}
+
+.contact-form button{
+  background:var(--gold);
+  border:none;
+  padding:15px;
+  width:100%;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.contact-form button:hover{
+  background:var(--dark);
+  color:white;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  background:var(--dark);
+  color:#aaa;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero h1{
+    font-size:42px;
+  }
+  .hero-content{
+    margin:0 20px;
+  }
+  .lux-contact{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Aurora Jewels</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Timeless <span>Jewellery</span><br>for Every Moment</h1>
+    <p>Luxury handcrafted jewellery inspired by elegance and tradition.</p>
+    <a href="#collections" class="btn">Explore Collection</a>
+  </div>
+</section>
+
+<!-- COLLECTIONS -->
+<section id="collections">
+  <div class="title">
+    <h2>Our <span>Collections</span></h2>
+  </div>
+
+  <div class="collections">
+    <div class="card">
+      <img src="assets/img1.jpg">
+      <div>
+        <h3>Necklaces</h3>
+        <p>Elegant everyday luxury.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="assets/img2.jpg">
+      <div>
+        <h3>Golden Earings</h3>
+        <p>Designed for royal occasions.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="assets/img3.jpg">
+      <div>
+        <h3>Bridal Sets</h3>
+        <p>Perfect for weddings & traditions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="why">
+  <div class="title">
+    <h2>Why Choose <span>Aurora</span></h2>
+  </div>
+
+  <div class="why-box">
+    <div class="why-item">
+      <h3>Certified Gold</h3>
+      <p>Hallmarked jewellery with purity assurance.</p>
+    </div>
+    <div class="why-item">
+      <h3>Handcrafted</h3>
+      <p>Expert artisans craft each piece.</p>
+    </div>
+    <div class="why-item">
+      <h3>Trusted Brand</h3>
+      <p>A legacy of elegance and trust.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="title">
+    <h2>About <span>Us</span></h2>
+  </div>
+
+  <div class="about">
+    <p>
+      Aurora Jewels is a premium jewellery brand offering timeless
+      designs inspired by Indian traditions and modern elegance.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="title">
+    <h2>Visit <span>Our Boutique</span></h2>
+  </div>
+
+  <div class="lux-contact">
+    <div class="contact-info">
+      <h3>Aurora Jewels</h3>
+      <p>Book a private appointment with our jewellery experts.</p>
+      <ul>
+        <li>📍 Royal Plaza, Diamond Street</li>
+        <li>📞 +91 98765 43210</li>
+        <li>✉ contact@aurorajewels.com</li>
+        <li>🕒 Mon – Sat (10AM – 8PM)</li>
+      </ul>
+    </div>
+
+    <div class="contact-form">
+      <h3>Book Appointment</h3>
+      <form onsubmit="submitForm(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="text" placeholder="Preferred Jewellery">
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Confirm Appointment</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Aurora Jewels. All Rights Reserved.
+</footer>
+
+<script>
+function submitForm(e){
+  e.preventDefault();
+  alert("Thank you! Our team will contact you shortly.");
+}
+</script>
+
+</body>
+</html>

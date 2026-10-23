@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ShoeX – Premium Footwear</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Inter,sans-serif;
+  background:radial-gradient(circle at top,#1c1c1c,#000);
+  color:#fff;
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:999;
+  padding:20px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter:blur(14px);
+  background:rgba(0,0,0,.6);
+}
+header h1{
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:30px;
+  font-weight:500;
+  opacity:.8;
+}
+nav a:hover{opacity:1}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  padding:120px 80px 60px;
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+.hero h2{
+  font-size:64px;
+  line-height:1.1;
+  font-weight:800;
+}
+.hero p{
+  max-width:500px;
+  margin:25px 0;
+  opacity:.85;
+}
+.hero button{
+  padding:16px 50px;
+  border:none;
+  border-radius:40px;
+  background:#ffcc00;
+  font-weight:700;
+  cursor:pointer;
+}
+.hero-img{
+  height:520px;
+  border-radius:30px;
+  background:url("https://images.unsplash.com/photo-1542291026-7eec264c27ff") center/cover;
+  box-shadow:0 40px 100px rgba(0,0,0,.6);
+}
+
+/* SECTIONS */
+section{padding:100px 80px}
+.section-title{
+  text-align:center;
+  margin-bottom:70px;
+}
+.section-title h2{
+  font-size:44px;
+  font-weight:800;
+}
+.section-title p{opacity:.7}
+
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:35px;
+}
+.card{
+  background:rgba(255,255,255,.06);
+  border-radius:26px;
+  overflow:hidden;
+  backdrop-filter:blur(10px);
+  transition:.4s;
+}
+.card:hover{transform:translateY(-15px)}
+.card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+}
+.card .content{
+  padding:25px;
+}
+.card span{
+  color:#ffcc00;
+  font-weight:700;
+}
+.card button{
+  margin-top:15px;
+  padding:12px 30px;
+  border:none;
+  border-radius:30px;
+  background:white;
+  color:#000;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* ABOUT */
+.about{
+  background:linear-gradient(120deg,#0f0f0f,#1b1b1b);
+  border-radius:60px;
+}
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+.feature{
+  background:rgba(255,255,255,.08);
+  padding:35px;
+  border-radius:25px;
+}
+
+/* STATS */
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:40px;
+  text-align:center;
+}
+.stats-grid h3{
+  font-size:52px;
+  color:#ffcc00;
+}
+
+/* REVIEWS */
+.review-box{
+  background:rgba(255,255,255,.07);
+  padding:35px;
+  border-radius:30px;
+}
+
+/* CONTACT */
+.contact{
+  background:#0c0c0c;
+  border-radius:60px;
+}
+.contact form{
+  max-width:600px;
+  margin:auto;
+}
+.contact input,
+.contact textarea{
+  width:100%;
+  padding:16px;
+  margin-bottom:15px;
+  border:none;
+  border-radius:16px;
+  background:#1a1a1a;
+  color:white;
+}
+.contact button{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:40px;
+  background:#ffcc00;
+  font-weight:700;
+}
+
+/* FOOTER */
+footer{
+  padding:40px;
+  text-align:center;
+  opacity:.6;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  header{padding:20px}
+  .hero{grid-template-columns:1fr;padding:120px 30px}
+  section{padding:90px 30px}
+  .hero h2{font-size:46px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>👟 ShoeX</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h2>Step Into<br>Premium Comfort</h2>
+    <p>
+      ShoeX designs world-class footwear blending performance,
+      elegance, and all-day comfort.
+    </p>
+    <button>Explore Collection</button>
+  </div>
+  <div class="hero-img"></div>
+</section>
+
+<section id="products">
+  <div class="section-title">
+    <h2>Best Sellers</h2>
+    <p>Crafted for performance & lifestyle</p>
+  </div>
+
+  <div class="products">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+      <div class="content">
+        <h3>Running Shoes</h3>
+        <span>₹4,999</span>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77">
+      <div class="content">
+        <h3>Casual Sneakers</h3>
+        <span>₹3,499</span>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
+      <div class="content">
+        <h3>Sports Trainers</h3>
+        <span>₹6,499</span>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-title">
+    <h2>Why ShoeX?</h2>
+    <p>Engineered for your lifestyle</p>
+  </div>
+
+  <div class="features">
+    <div class="feature">✔ Premium Materials</div>
+    <div class="feature">✔ All-Day Comfort</div>
+    <div class="feature">✔ Modern Design</div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="section-title">
+    <h2>Our Impact</h2>
+  </div>
+
+  <div class="stats-grid">
+    <div><h3>1M+</h3><p>Pairs Sold</p></div>
+    <div><h3>500K+</h3><p>Customers</p></div>
+    <div><h3>4.9★</h3><p>Ratings</p></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-title">
+    <h2>Contact ShoeX</h2>
+    <p>We’d love to hear from you</p>
+  </div>
+
+  <form>
+    <input type="text" placeholder="Name">
+    <input type="email" placeholder="Email">
+    <textarea rows="4" placeholder="Message"></textarea>
+    <button>Send Message</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 ShoeX — Designed for Motion
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ÉLAN — Women's Clothing Stories</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+
+<style>
+/* ================= COLOR & STYLE ================= */
+:root{
+  --bg:#111827;
+  --panel:#1f2937;
+  --soft:#374151;
+  --text:#f9fafb;
+  --muted:#9ca3af;
+  --accent:#f472b6;
+  --accent2:#60a5fa;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Inter,system-ui;
+  background:linear-gradient(180deg,#0f172a,#111827);
+  color:var(--text);
+  line-height:1.8;
+}
+
+/* ================= NAV ================= */
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(17,24,39,.85);
+  backdrop-filter:blur(10px);
+  padding:20px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+nav .logo{font-weight:800;letter-spacing:2px}
+nav a{color:var(--text);text-decoration:none;margin-left:28px;font-size:14px}
+
+/* ================= HERO ================= */
+.hero{
+  padding:140px 80px 120px;
+}
+.hero-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:60px;
+  align-items:center;
+}
+.hero-img{
+  height:300px; /* smaller home image */
+  max-width:360px;
+  margin-left:auto;
+}
+.hero h1{
+  font-family:"Playfair Display";
+  font-size:clamp(3.5rem,6vw,6.5rem);
+  line-height:1.1;
+}
+.hero h1 span{color:var(--accent)}
+.hero p{
+  margin-top:30px;
+  max-width:680px;
+  color:var(--muted);
+  font-size:18px;
+}
+
+/* ================= EDITORIAL ================= */
+.editorial{
+  padding:120px 80px;
+  background:var(--panel);
+}
+.editorial-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+}
+.editorial h2{
+  font-family:"Playfair Display";
+  font-size:48px;
+  margin-bottom:30px;
+}
+.editorial p{margin-bottom:24px}
+
+/* ================= IMAGE FIX ================= */
+.image-box{
+  width:100%;
+  height:100%;
+  border-radius:30px;
+  overflow:hidden;
+  background:#000;
+}
+
+.image-box img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  background:#000;
+}
+
+.editorial .image-box{height:320px}
+
+/* ================= COLLECTIONS ================= */
+.collections{
+  padding:120px 80px;
+}
+.collections h2{
+  font-family:"Playfair Display";
+  font-size:50px;
+  margin-bottom:60px;
+}
+
+.collection{
+  display:grid;
+  grid-template-columns:420px 1fr;
+  gap:60px;
+  margin-bottom:120px;
+}
+.collection:nth-child(even){grid-template-columns:1fr 420px}
+
+.collection .image-box{height:480px}
+.collection h3{font-size:32px;margin-bottom:14px}
+.collection span{color:var(--accent2);letter-spacing:2px;font-size:13px}
+.collection p{margin-top:20px;color:var(--muted)}
+
+/* ================= BRANDS ================= */
+.brands{
+  padding:120px 80px;
+  background:var(--panel);
+}
+.brands h2{
+  font-family:"Playfair Display";
+  font-size:48px;
+  margin-bottom:50px;
+}
+
+.brand-story{
+  max-width:900px;
+  margin-bottom:70px;
+}
+.brand-story h4{font-size:26px;margin-bottom:14px;color:var(--accent)}
+.brand-story p{color:var(--muted)}
+
+/* ================= FOOTER ================= */
+footer{
+  padding:60px 40px;
+  text-align:center;
+  color:var(--muted);
+}
+
+@media(max-width:900px){
+  nav{padding:20px 30px}
+  .hero,.editorial,.collections,.brands{padding:80px 30px}
+  .editorial-grid,.collection{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">ÉLAN</div>
+  <div>
+    <a href="#collections">Collections</a>
+    <a href="#brands">Brands</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <h1>Clothing Designed<br>for <span>Expression</span></h1>
+      <p>
+        ÉLAN is a women’s clothing editorial website built for storytelling,
+        visual rhythm, and long-form fashion content.
+      </p>
+    </div>
+    <div class="hero-image image-box hero-img">
+      <img src="assets/home.jpg" alt="Featured fashion">
+    </div>
+  </div>
+</section>
+
+<section class="editorial">
+  <div class="editorial-grid">
+    <div>
+      <h2>The Language of Style</h2>
+      <p>Fashion reflects identity, culture, and confidence.</p>
+      <p>Add your own high-quality images — layout adapts automatically.</p>
+    </div>
+    <div class="image-box">
+      <img src="assets/img1.jpg" alt="Editorial">
+    </div>
+  </div>
+</section>
+
+<section id="collections" class="collections">
+  <h2>Women's Collections</h2>
+
+  <div class="collection">
+    <div class="image-box"><img src="assets/img2.jpg" alt="Dresses"></div>
+    <div>
+      <span>DRESSES</span>
+      <h3>Everyday Elegance</h3>
+      <p>Flowing silhouettes designed for comfort and beauty.</p>
+    </div>
+  </div>
+
+  <div class="collection">
+    <div>
+      <span>ETHNIC</span>
+      <h3>Rooted in Tradition</h3>
+      <p>Timeless culture expressed through fabric and craft.</p>
+    </div>
+    <div class="image-box"><img src="assets/img3.jpg" alt="Ethnic"></div>
+  </div>
+
+  <div class="collection">
+    <div class="image-box"><img src="assets/img4.jpg" alt="Evening"></div>
+    <div>
+      <span>EVENING</span>
+      <h3>After Dark</h3>
+      <p>Bold silhouettes and expressive colors for the night.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 ÉLAN — Women's Clothing Editorial Website
+</footer>
+
+</body>
+</html>

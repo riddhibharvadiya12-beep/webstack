@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CineVerse – Watch Movies & Series</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Inter,sans-serif;
+  background:#0b0b0f;
+  color:#eaeaea;
+  overflow-x:hidden;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  position:fixed;
+  left:0;
+  top:0;
+  width:230px;
+  height:100vh;
+  background:#111;
+  padding:30px 20px;
+}
+.sidebar h2{
+  color:#e50914;
+  margin-bottom:40px;
+}
+.sidebar a{
+  display:block;
+  color:#aaa;
+  text-decoration:none;
+  margin:18px 0;
+  font-size:15px;
+}
+.sidebar a:hover{color:white}
+
+/* ===== MAIN ===== */
+.main{
+  margin-left:230px;
+}
+
+/* ===== HERO ===== */
+.hero{
+  height:80vh;
+  background:
+    linear-gradient(to right,#000 30%,transparent),
+    url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba") center/cover;
+  display:flex;
+  align-items:center;
+  padding:60px;
+}
+.hero-content{
+  max-width:600px;
+}
+.hero h1{
+  font-size:56px;
+}
+.hero p{
+  margin:20px 0;
+  color:#ccc;
+}
+.hero button{
+  padding:14px 35px;
+  border:none;
+  border-radius:4px;
+  background:#e50914;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* ===== SECTION ===== */
+section{
+  padding:60px;
+}
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+.section-title h2{font-size:28px}
+.section-title span{color:#888;font-size:14px}
+
+/* ===== MOVIE ROW ===== */
+.row{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  padding-bottom:10px;
+}
+.row::-webkit-scrollbar{height:6px}
+.row::-webkit-scrollbar-thumb{background:#333}
+
+.movie{
+  min-width:200px;
+  background:#161616;
+  border-radius:12px;
+  overflow:hidden;
+  transition:.3s;
+}
+.movie:hover{transform:scale(1.08)}
+.movie img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+}
+.movie div{
+  padding:12px;
+}
+.movie h4{font-size:15px}
+.movie p{
+  font-size:12px;
+  color:#aaa;
+}
+
+/* ===== GENRE GRID ===== */
+.genres{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
+}
+.genre{
+  height:160px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  font-weight:600;
+  background:linear-gradient(135deg,#e50914,#8b0000);
+}
+
+/* ===== STATS ===== */
+.stats{
+  background:#111;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:40px;
+  text-align:center;
+}
+.stats h3{
+  font-size:38px;
+  color:#e50914;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#000;
+  color:#777;
+  text-align:center;
+  padding:25px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .sidebar{display:none}
+  .main{margin-left:0}
+  .hero h1{font-size:40px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2>CineVerse</h2>
+  <a href="#">Home</a>
+  <a href="#">Trending</a>
+  <a href="#">Movies</a>
+  <a href="#">Series</a>
+  <a href="#">New Releases</a>
+  <a href="#">My List</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>The Dark Knight</h1>
+      <p>
+        Gotham’s silent guardian faces his greatest psychological and physical
+        tests as chaos threatens the city.
+      </p>
+      <button>▶ Watch Now</button>
+    </div>
+  </div>
+
+  <!-- TRENDING -->
+  <section>
+    <div class="section-title">
+      <h2>🔥 Trending Now</h2>
+      <span>See all</span>
+    </div>
+    <div class="row">
+      <div class="movie">
+        <img src="https://images.unsplash.com/photo-1595769816263-9b910be24d5f">
+        <div><h4>Inception</h4><p>Sci-Fi • Action</p></div>
+      </div>
+      <div class="movie">
+        <img src="https://images.unsplash.com/photo-1606112219348-204d7d8b94ee">
+        <div><h4>Interstellar</h4><p>Adventure • Drama</p></div>
+      </div>
+      <div class="movie">
+        <img src="https://images.unsplash.com/photo-1517602302552-471fe67acf66">
+        <div><h4>Joker</h4><p>Crime • Thriller</p></div>
+      </div>
+      <div class="movie">
+        <img src="https://images.unsplash.com/photo-1616530940355-351fabd9524b">
+        <div><h4>Avengers</h4><p>Action • Fantasy</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GENRES -->
+  <section>
+    <div class="section-title">
+      <h2>Browse by Genre</h2>
+      <span>Explore</span>
+    </div>
+    <div class="genres">
+      <div class="genre">Action</div>
+      <div class="genre">Drama</div>
+      <div class="genre">Comedy</div>
+      <div class="genre">Sci-Fi</div>
+      <div class="genre">Horror</div>
+      <div class="genre">Romance</div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div>
+      <h3>10K+</h3>
+      <p>Movies</p>
+    </div>
+    <div>
+      <h3>3K+</h3>
+      <p>TV Series</p>
+    </div>
+    <div>
+      <h3>50M+</h3>
+      <p>Users</p>
+    </div>
+    <div>
+      <h3>190+</h3>
+      <p>Countries</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 CineVerse • Unlimited Movies & Entertainment
+  </footer>
+
+</div>
+
+</body>
+</html>

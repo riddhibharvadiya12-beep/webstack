@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ClearPath – Useful Ideas for Daily Life</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#121212;
+  color:#f3f3f3;
+}
+
+/* HEADER */
+header{
+  padding:30px 50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #2a2a2a;
+}
+
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:28px;
+  color:#e1b382;
+}
+
+nav a{
+  margin-left:28px;
+  text-decoration:none;
+  color:#bbb;
+  font-size:14px;
+}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:0.8fr 1.2fr;
+  min-height:90vh;
+}
+
+.hero-left{
+  padding:80px 50px;
+  border-right:1px solid #2a2a2a;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.hero-left h1{
+  font-family:'Playfair Display',serif;
+  font-size:58px;
+  line-height:1.1;
+  margin-bottom:20px;
+}
+
+.hero-left span{color:#6d9886}
+
+.hero-left p{
+  color:#bdbdbd;
+  font-size:16px;
+  max-width:420px;
+  margin-bottom:40px;
+}
+
+.hero-left a{
+  padding:12px 30px;
+  border:1px solid #e1b382;
+  color:#e1b382;
+  text-decoration:none;
+  font-size:14px;
+  letter-spacing:1px;
+  width:max-content;
+}
+
+/* HERO RIGHT */
+.hero-right{
+  padding:60px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.block{
+  border-top:2px solid #6d9886;
+  padding-top:20px;
+}
+
+.block h3{
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  margin-bottom:12px;
+}
+
+.block p{
+  font-size:14px;
+  color:#cfcfcf;
+  line-height:1.7;
+}
+
+/* SECTION */
+.section{
+  padding:100px 50px;
+  border-top:1px solid #2a2a2a;
+}
+
+.section h2{
+  font-family:'Playfair Display',serif;
+  font-size:44px;
+  margin-bottom:40px;
+  color:#e1b382;
+}
+
+/* GUIDES */
+.guides{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:40px;
+}
+
+.guide{
+  border-left:3px solid #6d9886;
+  padding-left:20px;
+}
+
+.guide h4{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.guide p{
+  font-size:14px;
+  color:#cfcfcf;
+  line-height:1.7;
+}
+
+/* HABITS */
+.habits{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+
+.habits ul{
+  list-style:none;
+}
+
+.habits li{
+  margin-bottom:20px;
+  padding-left:20px;
+  position:relative;
+  color:#cfcfcf;
+}
+
+.habits li::before{
+  content:"—";
+  position:absolute;
+  left:0;
+  color:#6d9886;
+}
+
+/* FRAMEWORK */
+.framework{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:40px;
+}
+
+.step{
+  border:1px solid #2a2a2a;
+  padding:30px;
+}
+
+.step span{
+  font-family:'Playfair Display',serif;
+  font-size:28px;
+  color:#6d9886;
+}
+
+.step h4{
+  margin:15px 0 10px;
+}
+
+/* NEWSLETTER */
+.newsletter{
+  background:#1a1a1a;
+  padding:80px 50px;
+  text-align:center;
+}
+
+.newsletter h2{
+  font-family:'Playfair Display',serif;
+  font-size:40px;
+  margin-bottom:15px;
+}
+
+.newsletter p{
+  color:#bbb;
+  margin-bottom:30px;
+}
+
+.newsletter input{
+  padding:14px;
+  width:260px;
+  border:none;
+  outline:none;
+}
+
+.newsletter button{
+  padding:14px 24px;
+  border:none;
+  background:#6d9886;
+  color:white;
+  margin-left:10px;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  padding:40px;
+  text-align:center;
+  font-size:13px;
+  color:#888;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-left{border-right:none;border-bottom:1px solid #2a2a2a}
+  .hero-right{grid-template-columns:1fr}
+  .habits{grid-template-columns:1fr}
+  .hero-left h1{font-size:42px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ClearPath</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Guides</a>
+    <a href="#">Habits</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-left">
+    <h1>Simple Ideas<br><span>That Actually Help</span></h1>
+    <p>
+      Practical thinking tools and calm productivity
+      systems for real life.
+    </p>
+    <a href="#">START READING</a>
+  </div>
+
+  <div class="hero-right">
+    <div class="block"><h3>Think Clearly</h3><p>Organize thoughts and remove mental clutter.</p></div>
+    <div class="block"><h3>Live Calmly</h3><p>Create routines that support peace.</p></div>
+    <div class="block"><h3>Work Smart</h3><p>Productivity without burnout.</p></div>
+    <div class="block"><h3>Grow Slowly</h3><p>Progress that lasts over time.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Practical Guides</h2>
+  <div class="guides">
+    <div class="guide"><h4>Overthinking Reset</h4><p>Simple ways to pause, reframe, and move forward.</p></div>
+    <div class="guide"><h4>Focus Framework</h4><p>Build attention without forcing motivation.</p></div>
+    <div class="guide"><h4>Energy Management</h4><p>Work with your natural rhythm.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Daily Habits That Help</h2>
+  <div class="habits">
+    <ul>
+      <li>Write one clear priority each morning</li>
+      <li>Limit decisions before noon</li>
+      <li>End the day with reflection</li>
+    </ul>
+    <ul>
+      <li>Reduce digital noise</li>
+      <li>Protect deep work time</li>
+      <li>Practice intentional rest</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <h2>The ClearPath Framework</h2>
+  <div class="framework">
+    <div class="step"><span>01</span><h4>Pause</h4><p>Slow down and observe.</p></div>
+    <div class="step"><span>02</span><h4>Simplify</h4><p>Remove unnecessary noise.</p></div>
+    <div class="step"><span>03</span><h4>Act</h4><p>Take small intentional steps.</p></div>
+    <div class="step"><span>04</span><h4>Reflect</h4><p>Adjust and continue.</p></div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <h2>Weekly Clarity Notes</h2>
+  <p>Short, calm insights delivered once a week.</p>
+  <input type="email" placeholder="Your email">
+  <button>Subscribe</button>
+</section>
+
+<footer>
+  © 2026 ClearPath • Calm knowledge for modern life
+</footer>
+
+</body>
+</html>

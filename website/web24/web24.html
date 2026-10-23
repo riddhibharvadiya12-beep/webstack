@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToyLab – Creative Toy Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --teal:#0f3d3e;
+  --ivory:#fffaf0;
+  --yellow:#f4b400;
+  --coral:#ff6f61;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Montserrat',sans-serif;
+  background:var(--ivory);
+  color:var(--teal);
+}
+
+/* ===== HEADER ===== */
+header{
+  padding:30px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-family:'Fredoka',cursive;
+  font-size:32px;
+}
+
+nav a{
+  margin-left:30px;
+  text-decoration:none;
+  color:var(--teal);
+  font-weight:500;
+}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  padding:90px 60px 160px;
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:60px;
+  align-items:center;
+  background:
+    radial-gradient(circle at 10% 20%, #ffe6cc 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, #ffd6e0 0%, transparent 40%),
+    linear-gradient(135deg, #fff1d6, #ffeef3);
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  top:-80px;
+  right:-80px;
+  width:260px;
+  height:260px;
+  background:var(--yellow);
+  opacity:.15;
+  border-radius:50%;
+}
+
+.hero h1{
+  font-family:'Fredoka',cursive;
+  font-size:64px;
+  line-height:1.05;
+}
+
+.hero h1 span{
+  color:var(--coral);
+}
+
+.hero p{
+  margin:25px 0 35px;
+  max-width:480px;
+  font-size:18px;
+}
+
+.hero-btn{
+  padding:14px 36px;
+  background:var(--teal);
+  color:white;
+  text-decoration:none;
+  border-radius:50px;
+  font-weight:600;
+}
+
+/* ===== HERO IMAGES COLLAGE ===== */
+.collage{
+  position:relative;
+  height:420px;
+}
+
+.collage img{
+  position:absolute;
+  width:220px;
+  border-radius:30px;
+  box-shadow:0 30px 60px rgba(0,0,0,.25);
+}
+
+.img1{top:0;left:40px;transform:rotate(-6deg)}
+.img2{top:120px;right:0;transform:rotate(6deg)}
+.img3{bottom:0;left:120px;transform:rotate(-2deg)}
+
+/* ===== DIAGONAL SECTION ===== */
+.diagonal{
+  background:var(--teal);
+  color:white;
+  padding:140px 60px;
+  clip-path:polygon(0 8%,100% 0,100% 100%,0 92%);
+}
+
+.diagonal h2{
+  font-family:'Fredoka',cursive;
+  font-size:48px;
+  margin-bottom:40px;
+}
+
+/* ===== FEATURE TOYS ===== */
+.feature{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+  margin-bottom:100px;
+}
+
+.feature img{
+  width:100%;
+  border-radius:40px;
+}
+
+.feature h3{
+  font-family:'Fredoka',cursive;
+  font-size:36px;
+  margin-bottom:20px;
+}
+
+.feature p{
+  font-size:18px;
+  color:#e2f5f3;
+}
+
+/* ===== CTA ===== */
+.cta{
+  background:var(--yellow);
+  padding:100px 60px;
+  text-align:center;
+}
+
+.cta h2{
+  font-family:'Fredoka',cursive;
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.cta a{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 36px;
+  background:var(--teal);
+  color:white;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  header{padding:20px}
+  .hero{grid-template-columns:1fr;padding:70px 20px}
+  .collage{height:360px}
+  .diagonal{padding:100px 20px}
+  .feature{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ToyLab</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Toys</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Where Toys<br><span>Come to Life</span></h1>
+    <p>
+      Explore thoughtfully designed toys that inspire
+      creativity, learning, and endless joy.
+    </p>
+    <a href="#" class="hero-btn">Explore Toys</a>
+  </div>
+
+  <div class="collage">
+    <img src="assets/img1.webp" class="img1" alt="Toy">
+    <img src="assets/img2.webp" class="img2" alt="Toy">
+    <img src="assets/img3.jpg" class="img3" alt="Toy">
+  </div>
+</section>
+
+<!-- FEATURE SECTION -->
+<section class="diagonal">
+  <h2>Play With Purpose</h2>
+
+  <div class="feature">
+    <img src="assets/img4.jpg" alt="Learning Toy">
+    <div>
+      <h3>Smart Learning Toys</h3>
+      <p>
+        Designed to boost problem-solving skills,
+        creativity, and early learning in fun ways.
+      </p>
+    </div>
+  </div>
+
+  <div class="feature">
+    <div>
+      <h3>Creative Imagination</h3>
+      <p>
+        From building blocks to art kits, our toys
+        encourage storytelling and self-expression.
+      </p>
+    </div>
+    <img src="assets/img5.webp" alt="Creative Toy">
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Discover the Joy of Play</h2>
+  <p>Safe • Creative • Loved by Kids</p>
+  <a href="#">Shop Collection</a>
+</section>
+
+</body>
+</html>

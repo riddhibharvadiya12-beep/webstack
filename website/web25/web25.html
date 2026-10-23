@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthyPaws – Dog Health & Nutrition</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Montserrat:wght@300;400&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f5f5f5;
+      --primary: #ff6f61;
+      --secondary: #6cbf84;
+      --dark: #333;
+      --light: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+    }
+
+    /* HEADER */
+    header {
+      padding: 25px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--light);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Baloo 2', cursive;
+      font-size: 28px;
+      color: var(--primary);
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 50px;
+      gap: 40px;
+      background: linear-gradient(135deg, #d7bd99, #000000);
+      border-radius: 30px;
+      margin: 30px 50px;
+    }
+
+    .hero-content h1 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 52px;
+      color: var(--primary);
+    }
+
+    .hero-content p {
+      margin: 20px 0;
+      max-width: 480px;
+      font-size: 18px;
+      color: #444;
+    }
+
+    .hero-content a {
+      padding: 14px 36px;
+      background: var(--secondary);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero img {
+      width: 400px;
+      border-radius: 30px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 80px 50px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 36px;
+      color: var(--primary);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    /* TIPS CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--light);
+      border-radius: 25px;
+      padding: 30px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: var(--secondary);
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: var(--secondary);
+      color: white;
+      padding: 60px 50px;
+      text-align: center;
+      border-radius: 30px;
+      margin: 80px 50px;
+    }
+
+    .newsletter h2 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .newsletter p {
+      margin-bottom: 25px;
+    }
+
+    .newsletter input {
+      padding: 14px;
+      width: 260px;
+      border: none;
+      border-radius: 20px;
+      outline: none;
+      margin-right: 10px;
+    }
+
+    .newsletter button {
+      padding: 14px 24px;
+      border: none;
+      background: var(--primary);
+      color: white;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: var(--primary);
+      color: white;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero img {
+        width: 100%;
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">HealthyPaws</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#health tips">Health Tips</a>
+      <a href="#nutrition">Nutrition</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Strong, Healthy & Happy Dogs</h1>
+      <p>Discover essential tips on dog nutrition, exercise, and overall health to keep your furry friend thriving.</p>
+      <a href="#health tips">Explore Tips</a>
+    </div>
+    <img src="assets/hero-img.jpg" alt="Healthy dog">
+  </section>
+
+  <!-- HEALTH TIPS -->
+  <section class="section" id="health tips">
+    <h2>Top Dog Health Tips</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Balanced Diet</h3>
+        <p>Feed your dog high-quality protein, vegetables, and grains to ensure a complete diet.</p>
+      </div>
+      <div class="card">
+        <h3>Regular Exercise</h3>
+        <p>Daily walks and playtime keep your dog healthy, fit, and mentally stimulated.</p>
+      </div>
+      <div class="card">
+        <h3>Routine Checkups</h3>
+        <p>Regular vet visits help prevent illness and catch health issues early.</p>
+      </div>
+      <div class="card">
+        <h3>Hydration</h3>
+        <p>Always provide fresh water to keep your dog hydrated and active.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUTRITION GUIDES -->
+  <section class="section" id="nutrition">
+    <h2>Nutrition Guides</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Puppy Nutrition</h3>
+        <p>Learn the best diet plan for growing puppies to support bones and immunity.</p>
+      </div>
+      <div class="card">
+        <h3>Adult Dogs</h3>
+        <p>Balanced meals for adult dogs maintain optimal weight and energy.</p>
+      </div>
+      <div class="card">
+        <h3>Senior Dogs</h3>
+        <p>Special nutrients to support joint health and vitality in older dogs.</p>
+      </div>
+      <div class="card">
+        <h3>Supplements</h3>
+        <p>Essential vitamins and minerals to boost immunity and overall health.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="contact">
+    <h2>Subscribe for Dog Health Tips</h2>
+    <p>Get weekly updates on nutrition, exercise, and health guides for your dogs.</p>
+    <input type="email" placeholder="Your email">
+    <button>Subscribe</button>
+  </section>
+
+  <footer>
+    © 2026 HealthyPaws • Keeping Dogs Healthy & Happy 🐾
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PULSE — Interactive Creative</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+body{
+  background:#0a0a0f;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* ===== CURSOR ===== */
+.cursor{
+  width:20px;height:20px;
+  border:2px solid #ff3d81;
+  border-radius:50%;
+  position:fixed;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  transition:transform .08s ease;
+  z-index:999;
+}
+
+/* ===== HERO ===== */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 10%;
+}
+
+.hero h1{
+  font-size:80px;
+  line-height:1.1;
+}
+
+.hero span{color:#ff3d81}
+
+.hero p{
+  margin:30px auto;
+  max-width:600px;
+  opacity:.85;
+}
+
+.hero button{
+  padding:16px 46px;
+  background:#ff3d81;
+  border:none;
+  color:#000;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* ===== INTERACTIVE CARDS ===== */
+.cards{
+  padding:120px 8%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+}
+
+.card{
+  background:linear-gradient(145deg,#13131a,#0d0d13);
+  border-radius:25px;
+  padding:40px;
+  min-height:280px;
+  transition:.4s;
+  cursor:pointer;
+  position:relative;
+}
+
+.card:hover{
+  transform:translateY(-20px) scale(1.03);
+  box-shadow:0 30px 80px rgba(255,61,129,.25);
+}
+
+.card h3{margin-bottom:15px;color:#ff3d81}
+
+.card p{opacity:.8}
+
+/* ===== EXPAND MODAL ===== */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+
+.modal-content{
+  background:#12121a;
+  padding:60px;
+  border-radius:30px;
+  max-width:600px;
+  text-align:center;
+}
+
+.modal-content h2{color:#ff3d81;margin-bottom:20px}
+
+.modal button{
+  margin-top:30px;
+  padding:12px 36px;
+  border:none;
+  background:#ff3d81;
+  color:#000;
+  cursor:pointer;
+}
+
+/* ===== STATS ===== */
+.stats{
+  padding:120px 8%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  text-align:center;
+}
+
+.stat h1{font-size:60px;color:#ff3d81}
+
+/* ===== FOOTER ===== */
+footer{
+  padding:80px 8%;
+  text-align:center;
+  background:#050507;
+  opacity:.8;
+}
+
+@media(max-width:900px){
+  .hero h1{font-size:48px}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Design That <span>Responds</span></h1>
+    <p>Move your cursor. Click the cards. Experience a website that reacts to you.</p>
+    <button onclick="scrollToCards()">Explore Interaction</button>
+  </div>
+</section>
+
+<!-- CARDS -->
+<section class="cards" id="cards">
+  <div class="card" onclick="openModal('Creative UI','Interfaces that feel alive and responsive.')">
+    <h3>Creative UI</h3>
+    <p>Hover, motion, and interaction-first layouts.</p>
+  </div>
+  <div class="card" onclick="openModal('Interactive Code','JavaScript-powered immersive experiences.')">
+    <h3>Interactive Code</h3>
+    <p>Websites that react in real time.</p>
+  </div>
+  <div class="card" onclick="openModal('Digital Stories','Narrative-driven digital products.')">
+    <h3>Digital Stories</h3>
+    <p>Design that guides emotion.</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stat"><h1 data-count="120">0</h1><p>Projects</p></div>
+  <div class="stat"><h1 data-count="75">0</h1><p>Clients</p></div>
+  <div class="stat"><h1 data-count="6">0</h1><p>Years</p></div>
+</section>
+
+<footer>
+  <p>© 2026 PULSE Interactive Studio</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+// Cursor Follow
+const cursor=document.querySelector('.cursor');
+document.addEventListener('mousemove',e=>{
+  cursor.style.left=e.clientX+'px';
+  cursor.style.top=e.clientY+'px';
+});
+
+// Scroll Button
+function scrollToCards(){
+  document.getElementById('cards').scrollIntoView({behavior:'smooth'});
+}
+
+// Modal
+function openModal(title,text){
+  modal.style.display='flex';
+  modalTitle.innerText=title;
+  modalText.innerText=text;
+}
+function closeModal(){modal.style.display='none'}
+
+// Counter Animation
+const counters=document.querySelectorAll('[data-count]');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const el=entry.target;
+      let start=0;
+      const end=+el.dataset.count;
+      const step=setInterval(()=>{
+        start++;
+        el.innerText=start;
+        if(start>=end) clearInterval(step);
+      },20);
+      observer.unobserve(el);
+    }
+  })
+});
+
+counters.forEach(c=>observer.observe(c));
+</script>
+
+</body>
+</html>

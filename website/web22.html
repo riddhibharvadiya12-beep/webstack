@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InnerBloom – Grow Within</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f6f4f1;
+  --green:#5f8d7e;
+  --dark:#2f3e46;
+  --light:#ffffff;
+  --soft:#ebe7e2;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--dark);
+  line-height:1.7;
+}
+
+/* ============ NAV ============ */
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  background:rgba(246,244,241,.9);
+  backdrop-filter:blur(10px);
+  z-index:10;
+}
+
+nav{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  color:var(--green);
+}
+
+nav a{
+  margin-left:25px;
+  text-decoration:none;
+  color:var(--dark);
+  font-weight:500;
+}
+
+/* ============ NEW HOME DESIGN ============ */
+.home{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  padding-top:120px;
+}
+
+/* LEFT PANEL */
+.home-left{
+  padding:80px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.tag{
+  font-size:14px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--green);
+  margin-bottom:25px;
+}
+
+.home-left h1{
+  font-family:'Playfair Display',serif;
+  font-size:64px;
+  line-height:1.05;
+  margin-bottom:30px;
+}
+
+.home-left h1 span{
+  color:var(--green);
+}
+
+.home-left p{
+  max-width:480px;
+  font-size:18px;
+  margin-bottom:40px;
+}
+
+.cta{
+  display:flex;
+  gap:20px;
+}
+
+.btn{
+  padding:14px 34px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.btn.primary{
+  background:var(--green);
+  color:white;
+}
+
+.btn.outline{
+  border:1.5px solid var(--green);
+  color:var(--green);
+}
+
+/* RIGHT PANEL (CREATIVE) */
+.home-right{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Abstract shapes */
+.shape{
+  position:absolute;
+  border-radius:50%;
+  opacity:.8;
+}
+
+.s1{
+  width:320px;height:320px;
+  background:#dfeae4;
+  top:15%;
+  left:20%;
+}
+
+.s2{
+  width:220px;height:220px;
+  background:#cfded6;
+  bottom:20%;
+  right:25%;
+}
+
+.center-text{
+  position:relative;
+  background:var(--light);
+  padding:80px;
+  border-radius:50%;
+  width:340px;
+  height:340px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-size:28px;
+  box-shadow:0 40px 80px rgba(0,0,0,.1);
+}
+
+/* ============ SECTIONS ============ */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:120px 20px;
+}
+
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.section-sub{
+  max-width:520px;
+  margin-bottom:60px;
+  color:#555;
+}
+
+/* Cards */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:var(--light);
+  padding:40px;
+  border-radius:30px;
+}
+
+.card h3{
+  font-family:'Playfair Display',serif;
+  margin-bottom:15px;
+}
+
+/* Quote */
+.quote{
+  background:var(--green);
+  color:white;
+  text-align:center;
+  padding:120px 20px;
+}
+
+.quote p{
+  font-family:'Playfair Display',serif;
+  font-size:36px;
+  max-width:800px;
+  margin:auto;
+}
+
+/* Contact */
+.contact{
+  background:var(--light);
+  padding:60px;
+  border-radius:40px;
+  max-width:700px;
+}
+
+.contact input,
+.contact textarea{
+  width:100%;
+  padding:15px;
+  margin-bottom:15px;
+  border:none;
+  background:#eee;
+  border-radius:15px;
+}
+
+.contact button{
+  padding:14px 30px;
+  background:var(--green);
+  color:white;
+  border:none;
+  border-radius:30px;
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  padding:40px;
+  color:#777;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .home{
+    grid-template-columns:1fr;
+  }
+  .home-left{
+    padding:60px 30px;
+  }
+  .home-right{
+    min-height:500px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">InnerBloom</div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#values">Values</a>
+      <a href="#contact">Connect</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section class="home">
+
+  <div class="home-left">
+    <div class="tag">A mindful space</div>
+    <h1>Design<br>your <span>inner</span><br>world</h1>
+    <p>
+      InnerBloom is a creative space for people who choose
+      depth over noise and intention over speed.
+    </p>
+    <div class="cta">
+      <a href="#about" class="btn primary">Explore</a>
+      <a href="#values" class="btn outline">Our Values</a>
+    </div>
+  </div>
+
+  <div class="home-right">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+    <div class="center-text">
+      Presence<br>creates<br>clarity
+    </div>
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">Why InnerBloom?</h2>
+  <p class="section-sub">
+    Growth doesn’t have to be loud to be real.
+    We believe in quiet consistency and honest living.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Slow Growth</h3>
+      <p>Progress that respects your natural rhythm.</p>
+    </div>
+    <div class="card">
+      <h3>Intentional Living</h3>
+      <p>Days designed with care, not pressure.</p>
+    </div>
+    <div class="card">
+      <h3>Inner Balance</h3>
+      <p>Success that feels calm, not exhausting.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote">
+  <p>
+    “A meaningful life is built quietly,<br>
+    moment by moment.”
+  </p>
+</div>
+
+<!-- VALUES -->
+<section id="values">
+  <h2 class="section-title">Our Core Values</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Mindfulness</h3>
+      <p>Attention is the most valuable currency.</p>
+    </div>
+    <div class="card">
+      <h3>Authenticity</h3>
+      <p>Living aligned with who you truly are.</p>
+    </div>
+    <div class="card">
+      <h3>Compassion</h3>
+      <p>Growth rooted in kindness.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Connect</h2>
+
+  <div class="contact">
+    <form onsubmit="sendMsg(event)">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea placeholder="Your thoughts..."></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2026 InnerBloom — Designed with intention
+</footer>
+
+<script>
+function sendMsg(e){
+  e.preventDefault();
+  alert("Thank you for reaching out 🌿");
+}
+</script>
+
+</body>
+</html>

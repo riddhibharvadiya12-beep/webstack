@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Creative Studio</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#7f5af0;
+  --dark:#0f172a;
+  --light:#f8fafc;
+  --glass:rgba(255,255,255,0.15);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+  background:linear-gradient(120deg,#0f172a,#1e293b);
+  color:var(--light);
+  overflow-x:hidden;
+}
+
+/* ================= HEADER ================= */
+header{
+  position:fixed;
+  top:0;left:0;width:100%;
+  padding:18px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter:blur(10px);
+  background:rgba(15,23,42,0.6);
+  z-index:1000;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:700;
+  color:var(--primary);
+}
+
+nav a{
+  color:#cbd5f5;
+  margin-left:30px;
+  text-decoration:none;
+  font-weight:500;
+  position:relative;
+}
+
+nav a::after{
+  content:'';
+  position:absolute;
+  left:0;bottom:-6px;
+  width:0;height:2px;
+  background:var(--primary);
+  transition:.3s;
+}
+
+nav a:hover::after{width:100%;}
+
+/* ================= HERO ================= */
+.hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:120px 80px 60px;
+}
+
+.hero-text h1{
+  font-size:56px;
+  line-height:1.1;
+}
+
+.hero-text span{color:var(--primary);}
+
+.hero-text p{
+  margin:25px 0;
+  max-width:520px;
+  color:#cbd5f5;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 34px;
+  border-radius:30px;
+  background:var(--primary);
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 10px 30px rgba(127,90,240,.4);
+}
+
+.hero-img{
+  position:relative;
+}
+
+.hero-img img{
+  width:100%;
+  animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-20px)}
+}
+
+/* ================= SECTION ================= */
+section{
+  padding:100px 80px;
+}
+
+.section-title{
+  text-align:center;
+  font-size:38px;
+  margin-bottom:60px;
+}
+
+/* ================= CARDS ================= */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:var(--glass);
+  backdrop-filter:blur(15px);
+  padding:30px;
+  border-radius:20px;
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+.card h3{margin-bottom:10px;color:var(--primary)}
+.card p{color:#e5e7eb;font-size:14px}
+
+/* ================= PORTFOLIO ================= */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:20px;
+  transition:.4s;
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+/* ================= FOOTER ================= */
+footer{
+  padding:40px;
+  text-align:center;
+  background:#020617;
+  color:#94a3b8;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;text-align:center}
+  .hero-img{margin-top:40px}
+  header{padding:18px 30px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">CreativeX</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <h1>We Build <span>Creative</span><br>Digital Experiences</h1>
+    <p>Modern websites, UI/UX designs, and interactive experiences that elevate your brand to the next level.</p>
+    <a href="#services" class="btn">Get Started</a>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1200" alt="Creative">
+  </div>
+</div>
+        
+<!-- SERVICES -->
+<section id="services">
+  <h2 class="section-title">Our Services</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Web Design</h3>
+      <p>Clean, modern, and responsive designs tailored for your business.</p>
+    </div>
+    <div class="card">
+      <h3>Development</h3>
+      <p>Fast and scalable websites using modern technologies.</p>
+    </div>
+    <div class="card">
+      <h3>Branding</h3>
+      <p>Strong visual identity that makes your brand stand out.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <h2 class="section-title">Our Work</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000">
+    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000">
+    <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1000">
+  </div>
+</section>
+
+<footer id="contact">
+  <p>© 2026 CreativeX Studio. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

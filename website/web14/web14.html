@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoeCraft - Creative Footwear</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #fefefe;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #ff416c, #ff4b2b);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 80px 50px;
+            background: #fefefe;
+        }
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-text h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #ff4b2b;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .hero-text button {
+            padding: 15px 30px;
+            font-size: 16px;
+            background: #ff416c;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .hero-text button:hover {
+            background: #ff4b2b;
+        }
+
+        .hero-image img {
+            width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        /* Featured Shoes */
+        .featured {
+            padding: 60px 50px;
+            background: #f8f8f8;
+        }
+
+        .featured h3 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #ff416c;
+        }
+
+        .shoe-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .shoe-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .shoe-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .shoe-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .shoe-card h4 {
+            margin: 15px 0 5px 0;
+        }
+
+        .shoe-card p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .shoe-card button {
+            margin-bottom: 15px;
+            padding: 10px 20px;
+            border: none;
+            background: #ff4b2b;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .shoe-card button:hover {
+            background: #ff416c;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 60px 50px;
+            background: #fefefe;
+            text-align: center;
+        }
+
+        .contact h3 {
+            font-size: 36px;
+            color: #ff416c;
+            margin-bottom: 15px;
+        }
+
+        .contact-desc {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact form input,
+        .contact form textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #ff416c;
+            border-radius: 50px;
+            outline: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .contact form input:focus,
+        .contact form textarea:focus {
+            border-color: #ff4b2b;
+            box-shadow: 0 0 10px rgba(255, 65, 108, 0.3);
+        }
+
+        .contact form button {
+            padding: 15px 40px;
+            font-size: 16px;
+            background: linear-gradient(90deg, #ff416c, #ff4b2b);
+            border: none;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact form button:hover {
+            background: linear-gradient(90deg, #ff4b2b, #ff416c);
+        }
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer a {
+            color: #ff416c;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ShoeCraft</h1>
+        <nav>
+            <a href="#shop">Shop</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Step Into Style</h2>
+            <p>Discover the latest trends in footwear. From sneakers to boots, find the perfect pair to match your style and elevate your look.</p>
+            <button>Shop Now</button>
+        </div>
+        <div class="hero-image">
+            <img src="assets/img3.avif" alt="Footwear Hero">
+        </div>
+    </section>
+
+    <section class="featured" id="shop">
+        <h3>Featured Shoes</h3>
+        <div class="shoe-grid">
+            <div class="shoe-card">
+                <img src="assets/img2.jpg" alt="Shoe 1">
+                <h4>Classic Sneaker</h4>
+                <p>$79.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="shoe-card">
+                <img src="assets/img1.webp" alt="Shoe 2">
+                <h4>Modern Boots</h4>
+                <p>$129.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="shoe-card">
+                <img src="assets/img4.jpeg" alt="Shoe 3">
+                <h4>Running Shoes</h4>
+                <p>$99.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="shoe-card">
+                <img src="assets/img5.jpeg" alt="Shoe 4">
+                <h4>Leather Loafers</h4>
+                <p>$149.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h3>Contact Us</h3>
+        <p class="contact-desc">Have a question or want to collaborate? Send us a message!</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+
+    <footer id="contact">
+        <p>© 2026 ShoeCraft. Designed with ❤️ by You. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>

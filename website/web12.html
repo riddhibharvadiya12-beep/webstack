@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ATELIER — Creative Content Website</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+
+<style>
+/* ================= ROOT COLORS ================= */
+:root{
+  --bg:#0f1c1a;            /* deep teal base */
+  --surface:#162826;       /* cards */
+  --text:#f4f7f6;          /* main text */
+  --muted:#9fb6b1;         /* muted text */
+  --primary:#2fffd8;       /* neon mint */
+  --secondary:#ff7a5a;     /* coral */
+  --accent:#6b7cff;        /* soft indigo */
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{
+  font-family:Inter,system-ui;
+  background:radial-gradient(circle at top left,#183532,#0f1c1a 60%);
+  color:var(--text);
+  line-height:1.7;
+}
+body{
+  font-family:Inter,system-ui;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+
+/* ================= NAV ================= */
+nav{
+  position:fixed;
+  top:0;left:0;right:0;
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 60px;
+  background:rgba(246,241,235,.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+nav .logo{font-weight:800;letter-spacing:2px}
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  margin-left:28px;
+  font-size:14px;
+}
+
+/* ================= HERO (COLOR BLOCK FRONT) ================= */
+.hero-new{
+  min-height:100vh;
+  padding:160px 80px 100px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:80px;
+  position:relative;
+}
+
+.hero-label{
+  letter-spacing:3px;
+  font-size:12px;
+  color:var(--primary);
+}
+
+.hero-copy h1{
+  margin-top:20px;
+  font-family:"Playfair Display";
+  font-size:clamp(3.4rem,6vw,6.4rem);
+  line-height:1.05;
+}
+.hero-copy h1 span{color:var(--secondary)}
+
+.hero-copy p{
+  margin-top:28px;
+  max-width:540px;
+  color:var(--muted);
+}
+
+.hero-art{
+  position:relative;
+}
+
+.shape{
+  position:absolute;
+  border-radius:32px;
+  filter:blur(0.5px);
+}
+
+.shape.s1{
+  width:320px;height:420px;
+  background:var(--primary);
+  top:0;left:40px;
+}
+
+.shape.s2{
+  width:280px;height:300px;
+  background:var(--accent);
+  bottom:40px;right:0;
+}
+
+.shape.s3{
+  width:220px;height:220px;
+  background:var(--secondary);
+  top:180px;right:120px;
+}
+
+/* ================= STATS ================= */
+.stats{
+  padding:100px 80px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+}
+.stat{
+  background:var(--surface);
+  padding:40px;
+  border-radius:24px;
+}
+.stat h2{font-size:42px;color:var(--primary)}
+.stat p{color:var(--muted)}
+
+/* ================= CONTENT ================= */
+.content{
+  padding:120px 80px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+}
+.content h2{
+  font-family:"Playfair Display";
+  font-size:48px;
+}
+.content article p{
+  margin-bottom:22px;
+}
+
+/* ================= FEATURES ================= */
+.features{
+  padding:120px 80px;
+  background:var(--surface);
+}
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.feature{
+  border:2px solid #eee;
+  padding:35px;
+  border-radius:26px;
+}
+.feature h4{margin-bottom:10px}
+.feature p{color:var(--muted)}
+
+/* ================= CTA ================= */
+.cta{
+  padding:140px 80px;
+  text-align:center;
+}
+.cta h2{
+  font-family:"Playfair Display";
+  font-size:56px;
+}
+.cta button{
+  margin-top:40px;
+  padding:18px 42px;
+  border:none;
+  border-radius:40px;
+  background:var(--primary);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
+
+footer{
+  padding:50px;
+  text-align:center;
+  color:var(--muted);
+}
+
+@media(max-width:900px){
+  nav{padding:0 30px}
+  .hero,.content{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">ATELIER</div>
+  <div>
+    <a href="#content">Story</a>
+    <a href="#features">Features</a>
+    <a href="#cta">Start</a>
+  </div>
+</nav>
+
+<section class="hero-new">
+  <div class="hero-copy">
+    <span class="hero-label">CONTENT PLATFORM</span>
+    <h1>
+      A Website<br>
+      Built to<br>
+      <span>Be Read</span>
+    </h1>
+    <p>
+      This front page abandons white backgrounds and traditional hero layouts.
+      It uses depth, color layering, and typography to create a strong first
+      impression for long‑form creative content.
+    </p>
+  </div>
+
+  <div class="hero-art">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+    <div class="shape s3"></div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stat"><h2 data-count="120">0</h2><p>Content Sections</p></div>
+  <div class="stat"><h2 data-count="50">0</h2><p>Templates</p></div>
+  <div class="stat"><h2 data-count="100">0</h2><p>Design Variants</p></div>
+  <div class="stat"><h2 data-count="24">0</h2><p>Color Systems</p></div>
+</section>
+
+<section id="content" class="content">
+  <h2>Designed for Reading</h2>
+  <article>
+    <p>
+      Large content websites need clarity, rhythm, and breathing space.
+      This layout focuses on readable line length, comfortable spacing,
+      and a visual hierarchy that guides the reader naturally.
+    </p>
+    <p>
+      Instead of overwhelming users with animations or heavy visuals,
+      the design uses simple shapes and warm colors to create a calm,
+      premium experience.
+    </p>
+    <p>
+      This makes it ideal for blogs, portfolios, documentation sites,
+      and template platforms.
+    </p>
+  </article>
+</section>
+
+<section id="features" class="features">
+  <h2 style="margin-bottom:50px">Key Features</h2>
+  <div class="features-grid">
+    <div class="feature"><h4>Content First</h4><p>Designed for long text and reading.</p></div>
+    <div class="feature"><h4>Unique Colors</h4><p>Warm editorial color system.</p></div>
+    <div class="feature"><h4>Creative Layout</h4><p>Not a typical landing page.</p></div>
+    <div class="feature"><h4>Responsive</h4><p>Works on all devices.</p></div>
+  </div>
+</section>
+
+<section id="cta" class="cta">
+  <h2>Start Building<br>Your Content Platform</h2>
+  <button>Get Started</button>
+</section>
+
+<footer>
+  © 2026 ATELIER — Creative Website Template
+</footer>
+
+<script>
+// Counter Animation
+const counters = document.querySelectorAll('[data-count]');
+const animate = el =>{
+  let start = 0;
+  const end = +el.dataset.count;
+  const inc = end / 80;
+  const timer = setInterval(()=>{
+    start += inc;
+    el.textContent = Math.floor(start);
+    if(start >= end){el.textContent = end; clearInterval(timer)}
+  },20);
+};
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){animate(e.target);observer.unobserve(e.target)}
+  })
+},{threshold:.6});
+
+counters.forEach(c=>observer.observe(c));
+</script>
+
+</body>
+</html>
